@@ -8,3 +8,4 @@ In order to add a model to a sql database.
 4. Open a package manage console and type the following:
 	-> add-migration AddProductModelToDb (this can be changed to another name)
 	-> update-database
+5. To add seed data add it into the file ApplicationDbContext in the method OnModelCreating()

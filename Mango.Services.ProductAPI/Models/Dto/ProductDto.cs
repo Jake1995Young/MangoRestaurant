@@ -1,8 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Mango.Services.ProductAPI.Models.Dto
+namespace Mango.Services.ProductAPI.Models.Dtos
 {
-    public class Product
+    public class ProductDto
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
