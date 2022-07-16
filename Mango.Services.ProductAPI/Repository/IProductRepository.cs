@@ -1,4 +1,4 @@
-﻿using Mango.Services.ProductAPI.Models.Dtos;
+﻿using Mango.Services.ProductAPI.Models.Dto;
 
 namespace Mango.Services.ProductAPI.Repository
 {

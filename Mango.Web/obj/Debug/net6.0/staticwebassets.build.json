@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sWx0OHPzSI/PLrCYszp0wHGaPYQQZvN9skQvJSyBjB8=",
+  "Hash": "/O5HBRQQgbse8Cp9oM0pa1Hl0WNZyOXEqrFYl3lj4pM=",
   "Source": "Mango.Web",
   "BasePath": "_content/Mango.Web",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Jake_Young\\source\\repos\\MangoRestaurant\\Mango.Web\\wwwroot\\images\\mango.png",
+      "SourceId": "Mango.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jake_Young\\source\\repos\\MangoRestaurant\\Mango.Web\\wwwroot\\",
+      "BasePath": "_content/Mango.Web",
+      "RelativePath": "images/mango.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\mango.png"
+    },
+    {
+      "Identity": "C:\\Users\\Jake_Young\\source\\repos\\MangoRestaurant\\Mango.Web\\wwwroot\\images\\order.PNG",
+      "SourceId": "Mango.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jake_Young\\source\\repos\\MangoRestaurant\\Mango.Web\\wwwroot\\",
+      "BasePath": "_content/Mango.Web",
+      "RelativePath": "images/order.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\order.PNG"
     },
     {
       "Identity": "C:\\Users\\Jake_Young\\source\\repos\\MangoRestaurant\\Mango.Web\\wwwroot\\js\\site.js",

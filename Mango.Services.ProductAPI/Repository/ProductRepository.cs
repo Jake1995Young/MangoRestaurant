@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Mango.Services.ProductAPI.DbContexts;
 using Mango.Services.ProductAPI.Models;
-using Mango.Services.ProductAPI.Models.Dtos;
+using Mango.Services.ProductAPI.Models.Dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mango.Services.ProductAPI.Repository
@@ -63,5 +63,6 @@ namespace Mango.Services.ProductAPI.Repository
             return _mapper.Map<List<ProductDto>>(productList);
 
         }
+
     }
 }
