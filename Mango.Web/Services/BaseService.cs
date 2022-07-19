@@ -71,7 +71,7 @@ namespace Mango.Web.Services
         }
         public void Dispose()
         {
-            GC.SuppressFinalize(this);
+            GC.SuppressFinalize(true);
         }
     }
 }
