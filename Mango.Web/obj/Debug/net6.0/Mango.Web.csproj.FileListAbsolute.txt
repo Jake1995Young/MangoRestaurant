@@ -38,6 +38,7 @@ C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Micr
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
