@@ -2,8 +2,12 @@
 using Mango.Services.ProductAPI.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Mango.Services.ProductAPI.ProductAPIController
+namespace Mango.Services.ProductAPI.Controllers
 {
     [Route("api/products")]
     public class ProductAPIController : ControllerBase
@@ -16,8 +20,6 @@ namespace Mango.Services.ProductAPI.ProductAPIController
             _productRepository = productRepository;
             this._response = new ResponseDto();
         }
-
-        [Authorize]
         [HttpGet]
         public async Task<object> Get()
         {

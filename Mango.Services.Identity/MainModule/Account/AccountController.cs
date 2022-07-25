@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Identity;
 using Mango.Services.Identity.Models;
 using System.Collections.Generic;
 using System.Security.Claims;
+using Mango.Services.Identity.MainModule.Account;
 
 namespace IdentityServerHost.Quickstart.UI
 {
@@ -215,7 +216,7 @@ namespace IdentityServerHost.Quickstart.UI
         {
             return View();
         }
-/*
+
         [HttpGet]
         public async Task<IActionResult> Register(string returnUrl)
         {
@@ -224,12 +225,12 @@ namespace IdentityServerHost.Quickstart.UI
 
             return View(vm);
         }
-*/
+
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-       /* public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -306,11 +307,11 @@ namespace IdentityServerHost.Quickstart.UI
 
                 }
             }
-
+            await BuildRegisterViewModelAsync(returnUrl);
             // If we got this far, something failed, redisplay form
             return View(model);
-        }*/
-       /* private async Task<RegisterViewModel> BuildRegisterViewModelAsync(string returnUrl)
+        }
+        private async Task<RegisterViewModel> BuildRegisterViewModelAsync(string returnUrl)
         {
             var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             List<string> roles = new List<string>();
@@ -370,7 +371,8 @@ namespace IdentityServerHost.Quickstart.UI
                 Username = context?.LoginHint,
                 ExternalProviders = providers.ToArray()
             };
-        }*/
+        }
+
         /*****************************************/
         /* helper APIs for the AccountController */
         /*****************************************/
