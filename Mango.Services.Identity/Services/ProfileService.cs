@@ -14,7 +14,10 @@ namespace Mango.Services.Identity.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public ProfileService(IUserClaimsPrincipalFactory<ApplicationUser> userClaimsPrincipalFactory, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public ProfileService(
+            IUserClaimsPrincipalFactory<ApplicationUser> userClaimsPrincipalFactory,
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _userClaimsPrincipalFactory = userClaimsPrincipalFactory;
             _userManager = userManager;
@@ -29,38 +32,30 @@ namespace Mango.Services.Identity.Services
 
             List<Claim> claims = userClaims.Claims.ToList();
             claims = claims.Where(claim => context.RequestedClaimTypes.Contains(claim.Type)).ToList();
-            
-            if (_userManager.SupportsUserRole)
+
+            if(_userManager.SupportsUserRole)
             {
                 IList<string> roles = await _userManager.GetRolesAsync(user);
-
-                foreach(var rolename in roles)
+                foreach(var role in roles)
                 {
-                    claims.Add(new Claim(JwtClaimTypes.Role, rolename));
+                    claims.Add(new Claim(JwtClaimTypes.Role, role));
                     claims.Add(new Claim(JwtClaimTypes.FamilyName, user.LastName));
                     claims.Add(new Claim(JwtClaimTypes.GivenName, user.FirstName));
-
                     if (_roleManager.SupportsRoleClaims)
                     {
-                        IdentityRole role = await _roleManager.FindByNameAsync(rolename);
-
-                        if(role != null)
-                        {
-                            claims.AddRange(await _roleManager.GetClaimsAsync(role));
-                        }
+                        IdentityRole _role = await _roleManager.FindByNameAsync(role);
+                        if (_role != null)
+                            claims.AddRange(await _roleManager.GetClaimsAsync(_role));
                     }
                 }
             }
-
             context.IssuedClaims = claims;
-
         }
-
 
         public async Task IsActiveAsync(IsActiveContext context)
         {
             string sub = context.Subject.GetSubjectId();
-            ApplicationUser user = await _userManager.FindByNameAsync(sub);
+            ApplicationUser user = await _userManager.FindByIdAsync(sub);
             context.IsActive = user != null;
         }
     }

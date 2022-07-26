@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Mango.Services.ProductAPI.Models;
 using Mango.Services.ProductAPI.Models.Dto;
-using Mango.Services.ProductAPI.Repository;
 
 namespace Mango.Services.ProductAPI
 {
@@ -12,7 +11,7 @@ namespace Mango.Services.ProductAPI
             var mappingConfig = new MapperConfiguration(config =>
             {
                 config.CreateMap<ProductDto, Product>();
-                config.CreateMap<Product, ProductDto>();
+                config.CreateMap<ProductDto, Product>().ReverseMap();
             });
 
             return mappingConfig;

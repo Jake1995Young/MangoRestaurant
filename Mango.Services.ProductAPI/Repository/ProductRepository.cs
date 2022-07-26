@@ -9,7 +9,7 @@ namespace Mango.Services.ProductAPI.Repository
     public class ProductRepository : IProductRepository
     {
         private readonly ApplicationDbContext _db;
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
 
         public ProductRepository(ApplicationDbContext db, IMapper mapper)
         {
@@ -28,7 +28,9 @@ namespace Mango.Services.ProductAPI.Repository
             {
                 _db.Products.Add(product);
             }
+
             await _db.SaveChangesAsync();
+
             return _mapper.Map<Product, ProductDto>(product);
         }
 
@@ -36,14 +38,15 @@ namespace Mango.Services.ProductAPI.Repository
         {
             try
             {
-                Product product = await _db.Products.FirstOrDefaultAsync(u => u.ProductId == productId);
-                if (product == null)
+                Product product = await _db.Products?.Where(pdt => pdt.ProductId == productId)?.FirstOrDefaultAsync();
+                if(product == null)
                 {
                     return false;
                 }
                 _db.Products.Remove(product);
-                await _db.SaveChangesAsync();
-                return true;
+                await _db.SaveChangesAsync();   
+                return true;    
+         
             }
             catch (Exception)
             {
@@ -53,16 +56,14 @@ namespace Mango.Services.ProductAPI.Repository
 
         public async Task<ProductDto> GetProductById(int productId)
         {
-            Product product = await _db.Products.Where(x => x.ProductId == productId).FirstOrDefaultAsync();
+            Product product = await _db.Products.Where(pdt => pdt.ProductId == productId)?.FirstOrDefaultAsync();
             return _mapper.Map<ProductDto>(product);
         }
 
         public async Task<IEnumerable<ProductDto>> GetProducts()
         {
-            List<Product> productList = await _db.Products.ToListAsync();
-            return _mapper.Map<List<ProductDto>>(productList);
-
+            List<Product> products = await _db.Products.ToListAsync();
+            return _mapper.Map<List<ProductDto>>(products);
         }
-
     }
 }

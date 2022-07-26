@@ -40,47 +40,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Duende.IdentityServer.AspNetIdentity": {
-              "target": "Package",
-              "version": "[6.1.2, )"
-            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
               "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[6.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.0-preview.6.22329.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.0-preview.6.22329.4, )"
+              "version": "[6.0.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
             },
-            "System.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[2.0.2.45, )"
-            },
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[7.0.0-preview.6.22324.4, )"
-            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.21.0, )"
+              "version": "[6.15.1, )"
             }
           },
           "imports": [

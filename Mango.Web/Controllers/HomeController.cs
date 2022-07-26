@@ -1,16 +1,10 @@
 ﻿using Mango.Web.Models;
 using Mango.Web.Services.IServices;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Mango.Web.Controllers
 {
@@ -27,28 +21,14 @@ namespace Mango.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<ProductDto> list = new();
+            List<ProductDto> products = new ();
             var response = await _productService.GetAllProductsAsync<ResponseDto>("");
             if (response != null && response.IsSuccess)
-            {
-                list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
-            }
-            return View(list);
+                products = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
+            return View(products);
         }
 
-        [Authorize]
-        public async Task<IActionResult> Details(int productId)
-        {
-            ProductDto model = new();
-            var response = await _productService.GetProductByIdAsync<ResponseDto>(productId, "");
-            if (response != null && response.IsSuccess)
-            {
-                model = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
-            }
-            return View(model);
-        }
 
-       
         public IActionResult Privacy()
         {
             return View();
@@ -61,16 +41,14 @@ namespace Mango.Web.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Login()
-        {
-
-            return RedirectToAction(nameof(Index));
+        public Task<IActionResult> Login()
+        {            
+            return Task.FromResult<IActionResult>(RedirectToAction(nameof(Index)));
         }
 
         public IActionResult Logout()
         {
             return SignOut("Cookies", "oidc");
         }
-
     }
 }
