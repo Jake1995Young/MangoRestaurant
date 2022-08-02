@@ -166,3 +166,4 @@ C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Services.Identity\obj\Deb
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Services.Identity\obj\Debug\net6.0\Mango.Services.Identity.pdb
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Services.Identity\obj\Debug\net6.0\Mango.Services.Identity.genruntimeconfig.cache
 C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Services.Identity\obj\Debug\net6.0\ref\Mango.Services.Identity.dll
+C:\Users\Jake_Young\source\repos\MangoRestaurant\Mango.Services.Identity\bin\Debug\net6.0\keys\is-signing-key-6A65960D080EEC5E5E61E16CA6E7B034.json

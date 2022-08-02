@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fNxSzwfRUssh3eVLpGfATRK/BKvFwdwQFpVc614lgk2Jc7Y4MOD6dJHYqR4MDiA70En049TwvsSVu4n8NOSegA==",
+  "dgSpecHash": "SQaafqqzL80YGfo0nt9T5WSKW8Oiu166hU0rCfgRrEWgVWOqXStcBJvtPkMv6IaMKIi8gzgZfAk5sQPxEybhmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jake_Young\\source\\repos\\MangoRestaurant\\Mango.Services.ProductAPI\\Mango.Services.ProductAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jake_Young\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Jake_Young\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Jake_Young\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Jake_Young\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jake_Young\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.1\\microsoft.aspnetcore.authentication.jwtbearer.6.0.1.nupkg.sha512",
