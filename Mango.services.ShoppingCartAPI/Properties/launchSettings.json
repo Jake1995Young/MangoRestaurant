@@ -1,18 +1,20 @@
 ﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:50039",
-      "sslPort": 44375
+      "applicationUrl": "http://localhost:41447",
+      "sslPort": 44362
     }
   },
   "profiles": {
-    "Mango.services.ShoppingCartAPI": {
+    "Mango.Services.ShoppingCartAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7227;http://localhost:5227",
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7187;http://localhost:5187",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,6 +22,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

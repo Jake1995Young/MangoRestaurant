@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mango.Services.ShoppingCartAPI.Controllers
 {
+
+    [ApiController]
+    [Route("api/cart")]
     public class CartController : Controller
     {
         private readonly ICartRepository cartRepository;
@@ -35,6 +38,14 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
         {
             try
             {
+                if (cartDto.CartDetails != null && cartDto.CartDetails.Count() > 0)
+                {
+                    foreach (var detail in cartDto.CartDetails)
+                    {
+                        if (detail.CartHeaderId == 0) detail.CartHeader = null;
+                    }
+                }
+
                 CartDto cartDt = await cartRepository.CreateUpdateCart(cartDto);
                 _response.Result = cartDt;
             }

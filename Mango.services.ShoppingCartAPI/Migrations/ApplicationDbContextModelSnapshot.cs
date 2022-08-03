@@ -16,18 +16,18 @@ namespace Mango.Services.ShoppingCartAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Mango.Services.ProductAPI.Models.CartDetails", b =>
+            modelBuilder.Entity("Mango.Services.ShoppingCartAPI.Models.CartDetails", b =>
                 {
-                    b.Property<int>("CartDetailsId")
+                    b.Property<int>("CartDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartDetailsId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartDetailId"), 1L, 1);
 
                     b.Property<int>("CartHeaderId")
                         .HasColumnType("int");
@@ -38,7 +38,7 @@ namespace Mango.Services.ShoppingCartAPI.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasKey("CartDetailsId");
+                    b.HasKey("CartDetailId");
 
                     b.HasIndex("CartHeaderId");
 
@@ -47,23 +47,24 @@ namespace Mango.Services.ShoppingCartAPI.Migrations
                     b.ToTable("CartDetails");
                 });
 
-            modelBuilder.Entity("Mango.Services.ProductAPI.Models.CartHeader", b =>
+            modelBuilder.Entity("Mango.Services.ShoppingCartAPI.Models.CartHeader", b =>
                 {
-                    b.Property<int>("CartDetailsId")
+                    b.Property<int>("CartHeaderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartDetailsId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartHeaderId"), 1L, 1);
 
                     b.Property<string>("CouponCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CartDetailsId");
+                    b.HasKey("CartHeaderId");
 
-                    b.ToTable("CartHeader");
+                    b.ToTable("CartHeaders");
                 });
 
             modelBuilder.Entity("Mango.Services.ShoppingCartAPI.Models.Product", b =>
@@ -92,9 +93,9 @@ namespace Mango.Services.ShoppingCartAPI.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Mango.Services.ProductAPI.Models.CartDetails", b =>
+            modelBuilder.Entity("Mango.Services.ShoppingCartAPI.Models.CartDetails", b =>
                 {
-                    b.HasOne("Mango.Services.ProductAPI.Models.CartHeader", "CartHeader")
+                    b.HasOne("Mango.Services.ShoppingCartAPI.Models.CartHeader", "CartHeader")
                         .WithMany()
                         .HasForeignKey("CartHeaderId")
                         .OnDelete(DeleteBehavior.Cascade)

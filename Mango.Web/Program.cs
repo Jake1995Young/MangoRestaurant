@@ -10,10 +10,13 @@ builder.Services.AddControllersWithViews();
 
 // Add HttpClient, set API Base URLs and add corresponding service wrappers
 builder.Services.AddHttpClient<IProductService, ProductService>();
+builder.Services.AddHttpClient<ICartService, CartService>();
 
 SD.ProductAPIBase = builder.Configuration.GetSection("ServiceUrls:ProductAPI").Value;
+SD.ShoppingCartAPIBase = builder.Configuration.GetSection("ServiceUrls:ShoppingCartAPI").Value;
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 // Add authentication
 builder.Services.AddAuthentication(options =>
